@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# ReactMovies 🎬
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um projeto React completo para visualizar filmes populares usando a API do TMDB (The Movie Database).
 
-## Available Scripts
+## 📋 Funcionalidades
 
-In the project directory, you can run:
+- ✅ Visualização de filmes populares
+- ✅ Página de detalhes do filme com sinopse, nota e data de lançamento
+- ✅ Roteamento entre páginas
+- ✅ Design responsivo
+- ✅ Estilização com styled-components
+- ✅ Integração com API externa (TMDB)
 
-### `npm start`
+## 🚀 Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** - Biblioteca JavaScript para interfaces
+- **Vite** - Build tool e servidor de desenvolvimento
+- **React Router DOM** - Roteamento de páginas
+- **Styled Components** - Estilização CSS-in-JS
+- **Axios** - Cliente HTTP para requisições à API
+- **TMDB API** - Base de dados de filmes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Instalação e Configuração
 
-### `npm test`
+### 1. Instalar dependências
+```bash
+pnpm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Configurar API do TMDB
 
-### `npm run build`
+**IMPORTANTE**: Para que a aplicação funcione completamente, você precisa configurar uma API key do TMDB:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Crie uma conta gratuita em [https://www.themoviedb.org/](https://www.themoviedb.org/)
+2. Faça login e vá em **Configurações** → **API**
+3. Crie uma nova API key
+4. Abra o arquivo `src/config/tmdb.js`
+5. Substitua `YOUR_API_KEY_HERE` pela sua API key:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+export const TMDB_CONFIG = {
+  API_KEY: 'sua_api_key_aqui', // ← Substitua aqui
+  // ... resto da configuração
+};
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Executar o projeto
+```bash
+pnpm run dev
+```
 
-### `npm run eject`
+A aplicação estará disponível em `http://localhost:5173/`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Estrutura do Projeto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── Pages/
+│   ├── HomePage.jsx          # Página inicial com lista de filmes
+│   └── MovieDetails.jsx      # Página de detalhes do filme
+├── Layouts/
+│   ├── Header.jsx           # Cabeçalho da aplicação
+│   ├── Main.jsx             # Container principal
+│   └── Footer.jsx           # Rodapé da aplicação
+├── components/
+│   └── MovieList.jsx        # Lista de filmes populares
+├── services/
+│   └── api.js               # Serviços de integração com TMDB API
+├── config/
+│   └── tmdb.js              # Configurações da API
+├── App.jsx                  # Componente principal com roteamento
+└── App.css                  # Estilos globais
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎯 Como Usar
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Página Inicial**: Visualize os filmes mais populares do momento
+2. **Detalhes do Filme**: Clique em qualquer filme para ver:
+   - Poster em alta qualidade
+   - Título original
+   - Sinopse completa
+   - Data de lançamento
+   - Nota de avaliação (1-10)
+   - Botão para voltar à lista
 
-## Learn More
+## 🎨 Características do Design
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Responsivo**: Funciona em desktop e mobile
+- **Gradientes**: Banner com gradiente roxo/azul
+- **Cards**: Filmes exibidos em cards com hover effects
+- **Badges**: Notas coloridas baseadas na avaliação
+- **Tipografia**: Fontes modernas e legíveis
+- **Cores**: Esquema de cores consistente
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔧 Scripts Disponíveis
 
-### Code Splitting
+- `pnpm run dev` - Inicia servidor de desenvolvimento
+- `pnpm run build` - Gera build de produção
+- `pnpm run preview` - Visualiza build de produção
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📝 Notas Importantes
 
-### Analyzing the Bundle Size
+- A API key do TMDB é **obrigatória** para o funcionamento completo
+- Sem a API key, a aplicação mostrará uma mensagem de erro
+- A API do TMDB é gratuita e não requer cartão de crédito
+- O projeto usa português brasileiro (pt-BR) como idioma padrão
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🤝 Contribuição
 
-### Making a Progressive Web App
+Este projeto foi desenvolvido como exercício educacional seguindo as especificações:
+- Projeto criado com Vite
+- Componentes organizados em pastas Pages e Layouts
+- Integração completa com TMDB API
+- Roteamento funcional
+- Estilização com styled-components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 📄 Licença
 
-### Advanced Configuration
+Este projeto é para fins educacionais.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+**ReactMovies© 2022. Todos os direitos reservados.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
